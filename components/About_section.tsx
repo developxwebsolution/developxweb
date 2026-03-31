@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 
-export default function About_section() {
+export default function AboutSection() {
   return (
     <section className="py-24 px-6 bg-white">
       <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-16 items-center">
@@ -42,7 +42,7 @@ export default function About_section() {
           </h2>
 
           <p className="mt-4 text-black leading-relaxed text-lg">
-            At DevelopX Web, we are a <strong>best website designing company in noida</strong> offering
+            At DevelopX Web, we are a <strong>best website designing company in Noida</strong> offering
             modern and affordable web design solutions for businesses of all sizes.
             Our focus is not just on design, but on creating high-performing,
             SEO-friendly websites that help you attract more customers and grow faster.

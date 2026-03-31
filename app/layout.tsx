@@ -2,53 +2,59 @@ import type { Metadata } from "next";
 import ClientLayout from "./ClientLayout";
 import GlobalQuoteModal from "@/components/GlobalQuoteModal";
 import "./globals.css";
-// Metadata (server component)
 import Script from "next/script";
 
+// ✅ Metadata (SEO Optimized)
 export const metadata: Metadata = {
-  title: "#Top Website Designing Company In India | Best eCommerce Website Development Company",
+  title:
+    "DevelopX Web | Website Developer in India | Affordable Web Development Services",
   description:
-    "Laser Web Maker is a most trusted Website development company offering custom websites, SEO-friendly designs, full-stack development, and professional digital solutions.",
+    "DevelopX Web is a leading website developer in India offering affordable web design, business website development, ecommerce solutions, and SEO-friendly websites to grow your business online.",
   icons: {
-    icon: "/favicon.ico", // standard favicon
-    shortcut: "/favicon.ico", // for browser shortcut
-    apple: "/apple-touch-icon.png", // optional for iOS devices
+    icon: "/favicon.ico",
+    shortcut: "/favicon.ico",
+    apple: "/apple-touch-icon.png",
   },
   keywords: [
-    "top Website development company",
-    "most trusted Website development",
-    "best website Desigining company Noida",
-    "custom Website development",
+    "website developer in India",
+    "web development company India",
+    "affordable web design",
+    "business website development",
+    "ecommerce website development",
     "SEO-friendly website",
   ],
   robots: "index, follow",
   alternates: {
-    canonical: "https://laserwebmaker.com",
+    canonical: "https://developxweb.com",
   },
+
   openGraph: {
-    title: "Best & Most Trusted Website Designing Company Noida | Laser Web Maker",
+    title:
+      "DevelopX Web | Professional Website Development Company in India",
     description:
-      "Looking for the best Website development company? Laser Web Maker delivers top-quality, responsive, SEO-friendly websites, custom web solutions, and professional digital services.",
-    url: "https://laserwebmaker.com",
+      "Get modern, fast, and SEO-friendly websites with DevelopX Web. We help businesses grow online with affordable web development services.",
+    url: "https://developxweb.com",
     type: "website",
     images: [
       {
-        url: "https://laserwebmaker.com/og/homepage.png",
+        url: "https://developxweb.com/og/homepage.png",
         width: 1200,
         height: 630,
       },
     ],
   },
+
   twitter: {
     card: "summary_large_image",
-    title: "Laser Web Maker - Top & Most Trusted Website Development Company",
+    title:
+      "DevelopX Web - Website Developer in India | Web Development Services",
     description:
-      "Professional, SEO-friendly Website development services. Build the best websites with Laser Web Maker and grow your online presence.",
-    images: ["https://laserwebmaker.com/og/homepage.png"],
+      "Affordable and professional web development services. Build your business website with DevelopX Web.",
+    images: ["https://developxweb.com/og/homepage.png"],
   },
 };
 
-// Root layout (server component)
+// ✅ Root Layout
 export default function RootLayout({
   children,
 }: {
@@ -57,7 +63,7 @@ export default function RootLayout({
   return (
     <ClientLayout>
       {children}
-      {/* ✅ Global Quote Form Modal */}
+
       {/* Breadcrumbs */}
       <Script type="application/ld+json" id="breadcrumbs">
         {JSON.stringify({
@@ -68,7 +74,7 @@ export default function RootLayout({
               "@type": "ListItem",
               position: 1,
               name: "Home",
-              item: "https://laserwebmaker.com/",
+              item: "https://developxweb.com/",
             },
           ],
         })}
@@ -79,17 +85,17 @@ export default function RootLayout({
         {JSON.stringify({
           "@context": "https://schema.org",
           "@type": "Organization",
-          name: "Laser Web Maker",
-          url: "https://laserwebmaker.com",
-          logo: "https://laserwebmaker.com/logo.png",
+          name: "DevelopX Web",
+          url: "https://developxweb.com",
+          logo: "https://developxweb.com/logo.png",
           sameAs: [
-            "https://www.facebook.com/laserwebmaker",
-            "https://www.instagram.com/laserwebmaker",
-            "https://www.linkedin.com/company/laserwebmaker",
+            "https://www.facebook.com/",
+            "https://www.instagram.com/",
+            "https://www.linkedin.com/",
           ],
           contactPoint: {
             "@type": "ContactPoint",
-            telephone: "+91 7291934043",
+            telephone: "+91 9625148434",
             contactType: "customer service",
           },
         })}
@@ -100,16 +106,16 @@ export default function RootLayout({
         {JSON.stringify({
           "@context": "https://schema.org",
           "@type": "LocalBusiness",
-          name: "Laser Web Maker - Most Trusted Web Development Company",
-          url: "https://laserwebmaker.com",
-          telephone: "+91 7291934043",
+          name: "DevelopX Web - Website Developer in India",
+          url: "https://developxweb.com",
+          telephone: "+91 9625148434",
           description:
-            "Laser Web Maker is a most trusted and top Website development company providing custom websites, SEO-friendly designs, full-stack development, and professional digital solutions.",
+            "DevelopX Web is a trusted web development company in India offering affordable web design, business website development, ecommerce solutions, and SEO-friendly websites.",
           openingHours: "Mo-Su 09:30-18:30",
           aggregateRating: {
             "@type": "AggregateRating",
-            ratingValue: "4.8",
-            ratingCount: "1200",
+            ratingValue: "4.9",
+            ratingCount: "150",
           },
         })}
       </Script>
@@ -122,18 +128,20 @@ export default function RootLayout({
           serviceType: "Web Development",
           provider: {
             "@type": "Organization",
-            name: "Laser Web Maker",
-            url: "https://laserwebmaker.com",
+            name: "DevelopX Web",
+            url: "https://developxweb.com",
           },
-          areaServed: "Global",
+          areaServed: "India",
           offers: {
             "@type": "Offer",
             priceCurrency: "INR",
-            price: "Custom Quotation",
-            url: "https://laserwebmaker.com/contact",
+            price: "2999",
+            url: "https://developxweb.com/contact",
           },
         })}
       </Script>
+
+      {/* Global Modal */}
       <GlobalQuoteModal />
     </ClientLayout>
   );

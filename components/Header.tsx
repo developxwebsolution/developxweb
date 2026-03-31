@@ -83,7 +83,7 @@ export default function Header() {
             <Link href="/" passHref>
               <Image
                 src="/images/logos/developxweb-logo-icon.png"
-                alt="Laser-Web-Maker-Logo"
+                alt="DevelopX Web Logo"
                 width={75}
                 height={43}
                 priority
