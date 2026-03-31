@@ -1,0 +1,246 @@
+import Image from "next/image"
+import Link from "next/link"
+import React, { useState, useEffect } from 'react';
+import CountUp from 'react-countup';
+import { useInView } from 'react-intersection-observer';
+
+
+const counterData = [
+  {
+    value: 11,
+    // suffix: "+ Years",
+    label: 'Years Experience',
+    bg: '#C6DEEA',
+    image: '/images/icons/counter1.png',
+    imageW: 113,
+    imageH: 120,
+  },
+  {
+    value: 10000,
+    label: 'Happy Customers',
+    bg: '#C8CCCD',
+    image: '/images/icons/counter2.png',
+    imageW: 75,
+    imageH: 100,
+  },
+  {
+    value: 90,
+    label: 'Expert Team',
+    bg: '#D9F5EF',
+    image: '/images/icons/counter3.png',
+    imageW: 90,
+    imageH: 100,
+  },
+  {
+    value: 900,
+    label: 'Total Reviews',
+    bg: '#ECEBE9',
+    image: '/images/icons/counter4.png',
+    imageW: 75,
+    imageH: 100,
+  },
+];
+
+export const AboutUs = () => {
+    const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.3 });
+    const [hasViewed, setHasViewed] = useState(false);
+  
+    useEffect(() => {
+      if (inView) setHasViewed(true);
+    }, [inView]);
+  
+  return (
+   <div className=" grid grid-cols-1 md:grid-cols-2 mx-auto  px-[15px] md:px-[60px] py-20  gap-[40px]">
+       
+        <div className="content-about flex  items-center">
+          <div>
+            <h2 className="mb-[16px] text-[32px] md:text-[40px] leading-[120%]">Leading Website Development Company in <span className="text-[#5E9ED5]">Noida</span></h2>
+            <p className="mb-[16px]">
+             At Laser Web Maker, we are dedicated to delivering high-quality, result-driven web development solutions for businesses of all sizes. Based in Noida, we combine creativity, technology, and strategy to build websites that help brands grow and stand out in the digital world.
+
+With a skilled team of designers, developers, and digital experts, we craft websites that are fast, modern, mobile-friendly, and optimized for performance. Whether it&apos;s a corporate website, e-commerce platform, portfolio, or a custom web application, we ensure every project is built with precision, innovation, and user-centric design.
+
+
+            </p>
+
+            <p>
+            We believe in long-term partnerships, transparent communication, and delivering measurable value. Our approach focuses on understanding your business, identifying your goals, and crafting tailored web solutions that give you a strong online presence.
+
+From website development and maintenance to branding, UI/UX, and hosting support — Laser Web Maker is your reliable technology partner committed to helping you succeed in the digital space.
+            </p>
+            
+            <Link
+              href="/contact-us"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-4 py-2 mt-[32px] text-[#fff] bg-[#589CD5] text-[16px] leading-[150%] border border-[#589CD5] hover:bg-transparent hover:text-[#589cd5] transition-all inline-block"
+            >
+              Read More
+            </Link>
+          </div>
+
+       
+        </div>
+         <div className="img">
+          {/* <Image
+            src={"/images/web-dev/about-web-dev.jpg"}
+            alt="About Web Development"
+            width={460}
+            height={560}
+            className="mx-auto"
+          /> */}
+           <div ref={ref} className="grid grid-cols-2 md:grid-cols-2 gap-[20px] ">
+                {counterData.map((item, index) => (
+                  <div key={index} className=" rounded-lg h-full"
+                  style={{ backgroundColor: item.bg }}>
+                    <div className="inner  md:items-center flex gap-4 md:gap-0 flex-col md:flex-row justify-center px-3  pt-[6px] md:justify-between">
+                      <div className="counter">
+                        {/* <h2 className="text-black text-[28px] font-bold leading-[36px]">
+                          {hasViewed ? <CountUp start={0} end={item.value} duration={2} /> : 0}
+                            {item.suffix ? ` ${item.suffix}` : "+"}
+                        </h2> */}
+                        <h2 className="text-black text-[28px] font-normal leading-[36px] items-start">
+            {hasViewed ? <CountUp start={0} end={item.value} duration={2} /> : 0}+
+          </h2>
+          
+                        <p className="text-[#000000] text-[14px] font-normal leading-[18px] md:leading[120%]">
+                          {item.label}
+                        </p>
+                      </div>
+                      <div>
+                        <Image
+                          src={item.image}
+                          alt={item.label}
+                          width={item.imageW}
+                          height={item.imageH}
+                          className="object-contain"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+ {/* <p className=" mt-5 mb-2 ">Trusted by Over 5,000 Global Clients 4.9 ★★★★☆ Customer Satisfaction</p> */}
+ <div className=" mt-5 mb-2 flex items-center md:items-end gap-1 md:gap-2 ">
+                 <p className=" z-10 md:text-sm text-[10px] font-semibold">
+                   Trusted by Over 5,000 Global Clients
+                 </p>
+                 <p className=" md:text-sm text-[10px] z-10 font-normal ">
+                   ( 4.9 rating
+                 </p>
+ 
+                 <div className="flex items-start md:items-end gap-1 text-[10px] pb-0 md:pb-1 z-10 font-normal md:text-sm">
+                   {/* 4 full yellow stars */}
+                   {[...Array(4)].map((_, index) => (
+                     <div
+                       key={index}
+                       className="relative w-[5.94px] h-[5.66px] md:w-[9.24px] md:h-[8.73px]"
+                     >
+                       <Image
+                         src="/images/icons/full-star.svg"
+                         alt="Full Star"
+                         fill
+                         priority
+                         className="object-contain"
+                       />
+                     </div>
+                   ))}
+ 
+                   {/* Half star */}
+                   {/* Half star as static image using Next.js Image */}
+                   <div className="relative w-[5.94px] h-[5.66px] md:w-[9.24px] md:h-[8.73px]">
+                     <Image
+                       src="/images/icons/half_star.svg"
+                       alt="Half Star"
+                       fill
+                       priority
+                       className="object-contain"
+                     />
+                   </div>
+                 </div>
+ 
+                 <p className="md:text-sm text-[7.48px] z-10 font-normal ">
+                   )
+                 </p>
+               </div>
+               <div className="left-logos grid grid-cols-2 md:grid-cols-4 gap-[20px] items-center p-10 bg-gray-200 shadow-sm rounded-xl">
+
+               
+                               <span className="">
+                                 <svg
+                                   className="w-auto h-[29.78px] "
+                                   viewBox="0 0 113 39"
+                                   fill="none"
+                                   xmlns="http://www.w3.org/2000/svg"
+                                 >
+                                   <g clipPath="url(#clip0_179_33841)">
+                                     <path
+                                       d="M109.335 23.6155L112.466 25.7026C111.45 27.1991 109.019 29.7669 104.818 29.7669C99.6001 29.7669 95.7145 25.7301 95.7145 20.5948C95.7145 15.1302 99.6413 11.4229 104.378 11.4229C109.143 11.4229 111.477 15.2124 112.232 17.2582L112.644 18.3019L100.369 23.3821C101.303 25.2221 102.758 26.1557 104.818 26.1557C106.877 26.1557 108.305 25.1396 109.335 23.6155ZM99.7101 20.3067L107.907 16.9014C107.454 15.7618 106.109 14.9518 104.502 14.9518C102.456 14.9518 99.614 16.7643 99.7101 20.3067Z"
+                                       fill="#FF302F"
+                                     />
+                                     <path
+                                       d="M89.7968 2.07239H93.751V28.9294H89.7968V2.07239Z"
+                                       fill="#20B15A"
+                                     />
+                                     <path
+                                       d="M83.5632 12.1368H87.3803V28.4486C87.3803 35.2177 83.3847 38.005 78.6613 38.005C74.2127 38.005 71.5354 35.0118 70.533 32.5816L74.0342 31.126C74.6657 32.6226 76.1898 34.394 78.6613 34.394C81.6957 34.394 83.5632 32.5128 83.5632 28.9979V27.6799H83.4259C82.5196 28.7782 80.7896 29.7667 78.5927 29.7667C74.0067 29.7667 69.805 25.7711 69.805 20.6223C69.805 15.4458 74.0067 11.4092 78.5927 11.4092C80.7759 11.4092 82.5196 12.3841 83.4259 13.455H83.5632V12.1368ZM83.8376 20.6223C83.8376 17.3819 81.682 15.0202 78.9359 15.0202C76.1623 15.0202 73.8281 17.3819 73.8281 20.6223C73.8281 23.8214 76.1623 26.1418 78.9359 26.1418C81.6822 26.1557 83.8378 23.8214 83.8378 20.6223"
+                                       fill="#3686F7"
+                                     />
+                                     <path
+                                       d="M48.097 20.5535C48.097 25.8398 43.9779 29.7254 38.925 29.7254C33.8724 29.7254 29.7531 25.8262 29.7531 20.5535C29.7531 15.2399 33.8724 11.3679 38.925 11.3679C43.9779 11.3679 48.097 15.2399 48.097 20.5535ZM44.0877 20.5535C44.0877 17.2584 41.6985 14.9926 38.925 14.9926C36.1516 14.9926 33.7624 17.2584 33.7624 20.5535C33.7624 23.8213 36.1516 26.1145 38.925 26.1145C41.6987 26.1145 44.0877 23.8213 44.0877 20.5535Z"
+                                       fill="#FF302F"
+                                     />
+                                     <path
+                                       d="M68.1299 20.5948C68.1299 25.8811 64.0107 29.7667 58.958 29.7667C53.9051 29.7667 49.786 25.8809 49.786 20.5948C49.786 15.2811 53.9051 11.4229 58.958 11.4229C64.0107 11.4229 68.1299 15.2675 68.1299 20.5948ZM64.1068 20.5948C64.1068 17.2996 61.7177 15.0338 58.9441 15.0338C56.1704 15.0338 53.7814 17.2996 53.7814 20.5948C53.7814 23.8626 56.1707 26.1557 58.9441 26.1557C61.7314 26.1557 64.1068 23.8489 64.1068 20.5948Z"
+                                       fill="#FFBA40"
+                                     />
+                                     <path
+                                       d="M14.6771 25.7437C8.92394 25.7437 4.42052 21.1028 4.42052 15.3496C4.42052 9.59669 8.92394 4.95574 14.6771 4.95574C17.7802 4.95574 20.0456 6.17769 21.7207 7.74305L24.4807 4.98329C22.1466 2.74525 19.0297 1.04236 14.6771 1.04236C6.79588 1.04258 0.163956 7.46864 0.163956 15.3496C0.163956 23.2306 6.79588 29.6569 14.6771 29.6569C18.9336 29.6569 22.1466 28.2564 24.6592 25.6476C27.2405 23.0662 28.0368 19.4413 28.0368 16.503C28.0368 15.583 27.927 14.6357 27.8034 13.9355H14.6771V17.7525H24.0275C23.7529 20.1418 22.9978 21.7757 21.8856 22.8876C20.54 24.2471 18.4119 25.7437 14.6771 25.7437Z"
+                                       fill="#3686F7"
+                                     />
+                                   </g>
+                                   <defs>
+                                     <clipPath id="clip0_179_33841">
+                                       <rect
+                                         width="112.85"
+                                         height="37.3"
+                                         fill="white"
+                                         transform="translate(0 0.985535)"
+                                       />
+                                     </clipPath>
+                                   </defs>
+                                 </svg>
+                               </span>
+             
+                               <span className="">
+                                 <Image
+                                   src="/images/icons/trustpilpt.png"
+                                   alt="trustpilpt"
+                                   width={138.75}
+                                   height={40}
+                                   className="w-auto h-[29.77px]  "
+                                 />
+                               </span>
+                               <span className="">
+                                 <Image
+                                   src="/images/icons/clutch.png"
+                                   alt="clutch"
+                                   width={112.85}
+                                   height={37.14}
+                                   className="w-auto h-[29.84px] "
+                                 />
+                               </span>
+                               <span className="">
+                                 <Image
+                                   src="/images/icons/goodfirms.png"
+                                   alt="goodfirms"
+                                   width={162.8}
+                                   height={36.9}
+                                   className="w-auto h-[29.72px] "
+                                 />
+                               </span>
+                             </div>
+        </div>
+      </div>
+  )
+}

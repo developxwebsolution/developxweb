@@ -1,0 +1,208 @@
+import React, { useRef, useState } from "react";
+import { AnimatePresence, motion } from "framer-motion";
+import Image from "next/image";
+import ModalForm from "@/components/ModalForm";
+
+// Define type for each tab
+interface Tab {
+  id: string;
+  label: string;
+  content: string;
+  image: string;
+  alt: string;
+  button: {
+    text: string;
+  }[];
+}
+const tabs: Tab[] = [
+  {
+    id: "Website Development",
+    label: "Website Development",
+    content:
+      "We build modern websites using reliable frameworks that focus on speed, security, and performance. Our framework-based website development ensures clean structure, easy navigation, and responsive design across all devices. These websites are easy to scale and ready to grow with your business.",
+    image: "/images/website-development/website-development.jpg",
+    button: [
+      {
+        text: "Get a Website Development",
+      },
+    ],
+    alt: "Website Development",
+  },
+
+  {
+    id: "Backend Development (CMS)",
+    label: "Backend Development (CMS)",
+    content:
+      "We develop strong backend systems using framework-based CMS solutions. This allows you to manage pages, content, and data easily without technical complexity. Our backend development focuses on stability, security, and smooth performance, giving you full control over your website.",
+    image: "/images/website-development/ecommerce-development.jpg",
+    button: [{ text: "Build Backend Development (CMS)" }],
+    alt: "Backend Development (CMS) ",
+  },
+
+  {
+    id: "E-commerce Website Development",
+    label: "E-commerce Website Development",
+    content:
+      "Our framework e-commerce solutions are designed to deliver fast and secure online stores. We build scalable e-commerce websites with product management, secure payment integration, and smooth checkout experiences. Each store is optimized for performance and future expansion.",
+    image: "/images/website-development/responsive-mobile-design.jpg",
+    button: [
+      {
+        text: "Get a E-commerce Website Development",
+      },
+    ],
+    alt: "E-commerce Website Development",
+  },
+
+  {
+    id: "Corporate Website Development",
+    label: "Corporate Website Development",
+    content:
+      "We create professional corporate websites using modern frameworks that reflect your brand identity. These websites are clean, reliable, and built to handle business requirements such as service pages, company profiles, and lead generation. The focus is on trust, performance, and long-term usability.",
+    image: "/images/website-development/cms-development.jpg",
+    button: [{ text: "Corporate Website Development" }],
+    alt: "Corporate Website Development",
+  },
+
+  {
+    id: "News & Blog Website Development",
+    label: "News & Blog Website Development",
+    content:
+      "We develop framework-based news and blog websites that are fast, well-structured, and easy to manage. From content publishing to category management, everything is designed for smooth updates and a better reading experience. These websites are optimized for speed and search visibility.",
+    image: "/images/website-development/website-maintenance-support.jpg",
+    button: [
+      {
+        text: "Get News & Blog Website Development",
+      },
+    ],
+    alt: "News & Blog Website Development",
+  },
+];
+
+export const Services = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [activeTab, setActiveTab] = useState<string>(tabs[0].id);
+  const scrollContainerRef = useRef<HTMLDivElement>(null);
+
+  // Get current tab data
+  const activeData = tabs.find((tab) => tab.id === activeTab);
+
+  const handleTabClick = (tabId: string, index: number) => {
+    setActiveTab(tabId);
+
+    // Scroll the clicked tab into view
+    const container = scrollContainerRef.current;
+    if (container) {
+      const button = container.children[index] as HTMLElement;
+      button.scrollIntoView({
+        behavior: "smooth",
+        inline: "center",
+        block: "nearest",
+      });
+    }
+  };
+
+  return (
+    <>
+      <div className="section-web-services flex items-center  justify-center section-style">
+        <div className="w-full  mx-auto text-center">
+          {/* Heading */}
+          <motion.h2
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="heading-second text-center mb-10"
+          >
+            Our Framework-Based Development Services
+          </motion.h2>
+          {/* Heading */}
+          <div className="relative mb-6">
+            <div className="flex justify-center w-full">
+              <div
+                ref={scrollContainerRef}
+                className="flex overflow-x-auto no-scrollbar gap-2 px-2 py-2 w-full max-w-max"
+                style={{ WebkitOverflowScrolling: "touch" }}
+                role="tablist"
+                aria-label="Web Development Services"
+              >
+                {tabs.map((tab, index) => (
+                  <button
+                    key={tab.id}
+                    role="tab"
+                    aria-selected={activeTab === tab.id}
+                    aria-controls={`panel-${tab.id}`}
+                    id={`tab-${tab.id}`}
+                    onClick={() => handleTabClick(tab.id, index)}
+                    className={`${
+                      activeTab === tab.id
+                        ? " bg-[#5E9ED5] text-white border-none hover:border-[#5E9ED5]"
+                        : "hover:text-[#589CD5]/80"
+                    } relative rounded-full px-4 tabing-heading py-2   whitespace-nowrap`}
+                  >
+                    {tab.label}
+                  </button>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          {/* Tab Content */}
+          <div className="relative  mx-auto">
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={activeTab}
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -10 }}
+                transition={{ duration: 0.4 }}
+                className="flex flex-col md:flex-row items-center gap-0 md:gap-6  bg-white/5 rounded-2xl"
+                role="tabpanel"
+                id={`panel-${activeData?.id}`}
+                aria-labelledby={`tab-${activeData?.id}`}
+              >
+                {/* Image */}
+                <div className="w-full md:w-1/2">
+                  <motion.div
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ duration: 0.5 }}
+                  >
+                    <Image
+                      src={activeData?.image ?? "/images/fallback.jpg"}
+                      alt={activeData?.alt ?? "Web development service image"}
+                      width={1200}
+                      height={1000}
+                      className="object-cover w-full h-full"
+                      priority={activeTab === tabs[0].id}
+                    />
+                  </motion.div>
+                </div>
+
+                {/* Content */}
+                <div className="w-full md:w-1/2 text-left space-y-3 p-6">
+                  {/* <h3 className="text-xl font-semibold">
+                  {activeData?.label} Services
+                </h3> */}
+                  <p className="text-sm sm:text-base">{activeData?.content}</p>
+                  <div className="flex gap-2 flex-wrap">
+                    {activeData?.button.map((btn, i) => (
+                      <button
+                        key={i}
+                        onClick={() => setIsModalOpen(true)}
+                        className="px-4 py-1 text-[#589CD5] text-[15px] leading-[150%] rounded-[99px] border border-[#589CD5] hover:bg-[#589CD5] hover:text-white transition-all inline-block"
+                      >
+                        {btn.text}
+                      </button>
+                    ))}
+                  </div>
+                </div>
+              </motion.div>
+            </AnimatePresence>
+          </div>
+
+          {/* MODAL — always included */}
+          <ModalForm isOpen={isModalOpen} setIsOpen={setIsModalOpen} />
+        </div>
+      </div>
+    </>
+  );
+};
