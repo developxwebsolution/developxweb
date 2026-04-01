@@ -12,10 +12,16 @@ export default function Footer() {
 
         {/* ABOUT */}
         <div className="flex-2">
-          <h3 className="text-2xl font-bold text-white mb-4 tracking-wide">
-            DevelopX Web
-          </h3>
-          <p className="text-sm leading-relaxed text-gray-300">
+            <div >
+                            <Image
+                              src="/images/logos/developxweb-logo.png"
+                              alt="Logo"
+                              width={247}
+                              height={43}
+                              style={{ backgroundColor: "white", borderRadius: "8px"}}
+                            />
+                          </div>
+          <p className="text-sm leading-relaxed text-gray-300 mt-3">
             Trusted website developer in India offering modern and affordable web design and development services. Build SEO-friendly websites that attract customers and grow online.
           </p>
 
