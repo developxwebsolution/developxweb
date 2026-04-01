@@ -9,20 +9,21 @@ export default function Footer() {
   return (
     <footer className="bg-gradient-to-t from-gray-900 via-gray-800 to-gray-900 text-gray-300 pt-16 pb-6 px-6">
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row md:justify-between md:space-x-10 space-y-10 md:space-y-0">
-
         {/* ABOUT */}
         <div className="flex-2">
-            <div >
-                            <Image
-                              src="/images/logos/developxweb-logo.png"
-                              alt="Logo"
-                              width={247}
-                              height={43}
-                              style={{ backgroundColor: "white", borderRadius: "8px"}}
-                            />
-                          </div>
+          <div>
+            <Image
+              src="/images/logos/developxweb-logo.png"
+              alt="Logo"
+              width={247}
+              height={43}
+              style={{ backgroundColor: "white", borderRadius: "8px" }}
+            />
+          </div>
           <p className="text-sm leading-relaxed text-gray-300 mt-3">
-            Trusted website developer in India offering modern and affordable web design and development services. Build SEO-friendly websites that attract customers and grow online.
+            Trusted website developer in India offering modern and affordable
+            web design and development services. Build SEO-friendly websites
+            that attract customers and grow online.
           </p>
 
           {/* SOCIAL */}
@@ -45,10 +46,35 @@ export default function Footer() {
             Quick Links
           </h3>
           <ul className="flex flex-col space-y-3 text-sm">
-            <li><Link href="/" className="hover:text-white transition-colors">Home</Link></li>
-            <li><Link href="/services" className="hover:text-white transition-colors">Services</Link></li>
-            <li><Link href="/about" className="hover:text-white transition-colors">About Us</Link></li>
-            <li><Link href="/contact" className="hover:text-white transition-colors">Contact</Link></li>
+            <li>
+              <Link href="/" className="hover:text-white transition-colors">
+                Home
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="/services"
+                className="hover:text-white transition-colors"
+              >
+                Services
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="/about"
+                className="hover:text-white transition-colors"
+              >
+                About Us
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="/contact"
+                className="hover:text-white transition-colors"
+              >
+                Contact
+              </Link>
+            </li>
           </ul>
         </div>
 
@@ -58,10 +84,18 @@ export default function Footer() {
             Our Services
           </h3>
           <ul className="flex flex-col space-y-3 text-sm">
-            <li className="hover:text-white transition-colors cursor-pointer">Business Website Development</li>
-            <li className="hover:text-white transition-colors cursor-pointer">Landing Page Design</li>
-            <li className="hover:text-white transition-colors cursor-pointer">E-commerce Website Development</li>
-            <li className="hover:text-white transition-colors cursor-pointer">Website Redesign</li>
+            <li className="hover:text-white transition-colors cursor-pointer">
+              Business Website Development
+            </li>
+            <li className="hover:text-white transition-colors cursor-pointer">
+              Landing Page Design
+            </li>
+            <li className="hover:text-white transition-colors cursor-pointer">
+              E-commerce Website Development
+            </li>
+            <li className="hover:text-white transition-colors cursor-pointer">
+              Website Redesign
+            </li>
           </ul>
         </div>
 
@@ -77,10 +111,10 @@ export default function Footer() {
             <MdPhone /> +91 96251 48434
           </div>
           <p className="text-sm mt-3 text-gray-400">
-            Leading web development company in India offering affordable web design solutions for startups and businesses.
+            Leading web development company in India offering affordable web
+            design solutions for startups and businesses.
           </p>
         </div>
-
       </div>
 
       {/* BOTTOM */}
@@ -90,19 +124,23 @@ export default function Footer() {
 
       {/* WhatsApp icon */}
       <section className="whatsapp">
-        <Link href="https://wa.me/+9625148434?text=I'm%20interested%20in%20your%20services" className="whatsapp-float" target="_blank" rel="noopener noreferrer">
+        <Link
+          href="https://wa.me/+9625148434?text=I'm%20interested%20in%20your%20services"
+          className="whatsapp-float"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           <div className="whatsapp-content">
-            <Image 
-              width={35} 
-              height={35} 
-              src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" 
-              alt="WhatsApp" 
-              className="whatsapp-icon" 
+            <Image
+              width={35}
+              height={35}
+              src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg"
+              alt="WhatsApp"
+              className="whatsapp-icon"
             />
           </div>
         </Link>
       </section>
-
     </footer>
   );
 }
