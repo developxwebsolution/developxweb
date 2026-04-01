@@ -10,10 +10,12 @@ export default function AboutSection() {
 
         {/* IMAGE SIDE */}
         <motion.div
-          initial={{ opacity: 0, x: -80 }}
-          whileInView={{ opacity: 1, x: 0 }}
+         initial={{ opacity: 0, x: -20 }}
+  whileInView={{ opacity: 1, x: 0 }}
+  transition={{ duration: 0.8 }}
+
+  className="relative"
           
-          className="relative"
         >
           <Image
             src="/images/home_img/home-about-img1.jpg"
@@ -33,9 +35,9 @@ export default function AboutSection() {
 
         {/* CONTENT SIDE */}
         <motion.div
-          initial={{ opacity: 0, x: 80 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8 }}
+                 initial={{ opacity: 0, x: 20 }}
+  whileInView={{ opacity: 1, x: 0 }}
+  transition={{ duration: 0.8 }}
         >
           <h2 className="text-3xl md:text-5xl font-bold text-black leading-tight">
             Leading Web Development Company in India for Growing Businesses
