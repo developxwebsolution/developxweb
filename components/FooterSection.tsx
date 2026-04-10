@@ -13,11 +13,11 @@ export default function Footer() {
         <div className="flex-2">
           <div>
             <Image
-              src="/images/logos/developxweb-logo.png"
+              src="/images/logos/logo-icon.png"
               alt="Logo"
-              width={247}
+              width={75}
               height={43}
-              style={{ backgroundColor: "white", borderRadius: "8px" }}
+              
             />
           </div>
           <p className="text-sm leading-relaxed text-gray-300 mt-3">

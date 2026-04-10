@@ -82,7 +82,7 @@ export default function Header() {
           <div className="flex items-center space-x-8">
             <Link href="/" passHref>
               <Image
-                src="/images/logos/developxweb-logo-icon.png"
+                src="/images/logos/logo-icon.png"
                 alt="DevelopX Web Logo"
                 width={75}
                 height={43}

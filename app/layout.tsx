@@ -11,9 +11,9 @@ export const metadata: Metadata = {
   description:
     "DevelopX Web is a leading website developer in India offering affordable web design, business website development, ecommerce solutions, and SEO-friendly websites to grow your business online.",
   icons: {
-    icon: "/favicon.ico",
-    shortcut: "/favicon.ico",
-    apple: "/apple-touch-icon.png",
+    icon: "./favicon.png",
+    shortcut: "/favicon.png",
+    apple: "/favicon.png",
   },
   keywords: [
     "website developer in India",

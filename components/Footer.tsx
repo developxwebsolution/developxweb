@@ -486,7 +486,7 @@ export default function Footer() {
 
                 <div>
                   <Image
-                    src="/images/logos/developxweb-logo.png"
+                    src="/images/logos/logo-icon.png"
                     alt="Logo"
                     width={247}
                     height={43}
