@@ -20,7 +20,7 @@ export default function Footer() {
               
             />
           </div>
-          <p className="text-sm leading-relaxed text-gray-300 mt-3">
+          <p className="text-sm leading-relaxed text-gray-300">
             Trusted website developer in India offering modern and affordable
             web design and development services. Build SEO-friendly websites
             that attract customers and grow online.
