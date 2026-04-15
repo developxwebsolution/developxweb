@@ -267,8 +267,8 @@ const TIME_LIMIT = OPEN_AFTER_HOURS * 60 * 60 * 1000;
             transition={{ duration: 0.3 }}
           >
             {/* Modal content (image + form) */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-0 rounded-tl-2xl rounded-tr-2xl overflow-hidden">
-              <div className="hidden md:flex justify-start bg-gradient-to-br from-[#E8F2FB] to-white ">
+            <div className="grid grid-cols-1 md:grid-cols-1 gap-0 rounded-tl-2xl rounded-tr-2xl overflow-hidden">
+              {/* <div className="hidden md:flex justify-start bg-gradient-to-br from-[#E8F2FB] to-white ">
                 <div className="get-in-touch-img relative w-full h-full">
                   <Image
                     src="/images/home_img/global-contact-img.webp"
@@ -278,7 +278,7 @@ const TIME_LIMIT = OPEN_AFTER_HOURS * 60 * 60 * 1000;
                     className="object-cover"
                   />
                 </div>
-              </div>
+              </div> */}
 
               <div className="bg-white  p-4 sm:p-6">
                 <div className="flex justify-end">
@@ -474,7 +474,7 @@ const TIME_LIMIT = OPEN_AFTER_HOURS * 60 * 60 * 1000;
             </div>
 
 
-             <div className="left-logos  flex  rounded-br-2xl rounded-bl-2xl  items-center justify-around pt-3 pb-3 bg-gray-200 border-b-[#5E9ED5] border-b-4  shadow-sm">
+             {/* <div className="left-logos  flex  rounded-br-2xl rounded-bl-2xl  items-center justify-around pt-3 pb-3 bg-gray-200 border-b-[#5E9ED5] border-b-4  shadow-sm">
                               <span className="">
                                 <svg
                                   className="w-[60.29px] h-[19.78px] "
@@ -551,7 +551,7 @@ const TIME_LIMIT = OPEN_AFTER_HOURS * 60 * 60 * 1000;
                                   className="w-[86.98px] h-[19.72px] "
                                 />
                               </span>
-                            </div>
+                            </div> */}
           </motion.div>
         </motion.div>
       )}

@@ -119,6 +119,15 @@ export default function RootLayout({
           },
         })}
       </Script>
+      <Script type="application/ld+json">
+        {JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Organization",
+          "name": "DevelopX Web",
+          "url": "https://developxweb.com",
+          "logo": "https://developxweb.com/logo.png"
+        })}
+      </Script>
 
       {/* Service */}
       <Script type="application/ld+json" id="service">
